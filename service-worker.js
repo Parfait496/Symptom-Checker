@@ -1,13 +1,14 @@
-const CACHE_NAME = 'symptom-checker-v1';
+const CACHE_NAME = 'symptom-checker-v2'; // Increment this to update cache
 const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/manifest.json',
-  '/icon.png' // Remove if you don't have this file
+  './',
+  './index.html',
+  './style.css',
+  './script.js',
+  './manifest.json',
+  './icon.png' // Remove or add more icons if needed
 ];
 
+// Install: cache core files
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
@@ -15,6 +16,7 @@ self.addEventListener('install', event => {
   self.skipWaiting();
 });
 
+// Activate: remove old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -26,6 +28,7 @@ self.addEventListener('activate', event => {
   self.clients.claim();
 });
 
+// Fetch: serve from cache, fallback to network
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request, { ignoreSearch: true }).then(response => {
