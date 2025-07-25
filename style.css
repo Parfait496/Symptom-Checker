@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+body {
+    padding: min(50px, 7%);
+    background-color: rgb(13, 13, 20);
+}
+
+h1 {
+    margin: 30px 0;
+}
+
+.cards {
+    padding: 2em;
+    border: 1px solid rgba(75, 82, 92);
+    border-radius: 10px;
+    background-color: #222429;
+    text-align: center;
+}
+
+.grid_container {
+    display: grid;
+    border: 1px solid red;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    justify-content: center;
+} 
+
+/* Symptom Checker custom styles */
+.primary-btn, .secondary-btn {
+    padding: 0.7em 2em;
+    margin: 1em 0.5em 0 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.primary-btn {
+    background: #4f8cff;
+    color: #fff;
+}
+.primary-btn:hover {
+    background: #2563eb;
+}
+.secondary-btn {
+    background: #333;
+    color: #fff;
+}
+.secondary-btn:hover {
+    background: #555;
+}
+.symptom-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin: 2em 0;
+}
+.symptom-list label {
+    background: #23272f;
+    padding: 0.7em 1.2em;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1em;
+    transition: background 0.2s;
+}
+.symptom-list input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+.results-list {
+    list-style: none;
+    padding: 0;
+    margin: 2em 0;
+}
+.result-card {
+    background: #23272f;
+    border-radius: 8px;
+    margin: 1em auto;
+    padding: 1.5em;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: left;
+}
+.severity.mild { color: #4ade80; }
+.severity.moderate { color: #facc15; }
+.severity.severe { color: #f87171; }
+.severity.varies { color: #38bdf8; }
+@media (max-width: 600px) {
+    .cards {
+        padding: 1em;
+    }
+    .result-card {
+        padding: 1em;
+        font-size: 0.98em;
+    }
+    .symptom-list {
+        gap: 0.5em;
+    }
+}
