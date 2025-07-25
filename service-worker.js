@@ -1,11 +1,11 @@
 const CACHE_NAME = 'symptom-checker-v2'; // Increment this to update cache
 const FILES_TO_CACHE = [
-  './',
-  './index.html',
-  './style.css',
-  './script.js',
-  './manifest.json',
-  './icon.png' // Remove or add more icons if needed
+  '/',
+  '/index.html',
+  '/style.css',
+  '/script.js',
+  '/manifest.json',
+  '/icon.png' // Remove or add more icons if needed
 ];
 
 // Install: cache core files
